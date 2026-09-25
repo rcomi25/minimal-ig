@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Minimal IG</title>
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Minimal IG">
+  
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="brand">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 3v18M3 12h18" stroke-dasharray="2 2"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+        </svg>
+        <h1>Minimal IG</h1>
+      </div>
+      <button id="settingsBtn" class="icon-btn" aria-label="Impostazioni">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <section class="timer-card">
+      <div class="timer-info">
+        <span class="label">Sessione Intenzionale</span>
+        <span id="timerDisplay" class="time">10:00</span>
+      </div>
+      <div class="timer-controls">
+        <button data-time="5" class="time-btn">5m</button>
+        <button data-time="10" class="time-btn active">10m</button>
+        <button data-time="15" class="time-btn">15m</button>
+        <button id="startTimerBtn" class="primary-btn">Avvia Timer</button>
+      </div>
+    </section>
+
+    <main class="grid-actions">
+      <a href="https://www.instagram.com/" class="action-card" target="_blank" rel="noopener">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <div class="text">
+          <h3>Home / Feed</h3>
+          <p>Solo le persone che segui</p>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/direct/inbox/" class="action-card" target="_blank" rel="noopener">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+        </div>
+        <div class="text">
+          <h3>Messaggi</h3>
+          <p>Chat dirette ed inviati</p>
+        </div>
+      </a>
+
+      <div class="action-card search-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <div class="text search-input-group">
+          <h3>Cerca Profilo</h3>
+          <form id="searchForm">
+            <input type="text" id="usernameInput" placeholder="Inserisci @username" required>
+            <button type="submit">Vai</button>
+          </form>
+        </div>
+      </div>
+
+      <a id="myProfileLink" href="https://www.instagram.com/" class="action-card" target="_blank" rel="noopener">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="text">
+          <h3>Il Mio Profilo</h3>
+          <p>Post e impostazioni</p>
+        </div>
+      </a>
+    </main>
+
+    <section class="engine-status">
+      <div class="status-header">
+        <span class="indicator active"></span>
+        <h4>Engine Anti-Scrolling Safari</h4>
+      </div>
+      <p>Per bloccare Reels ed Esplora dentro Safari, scarica ed installa il file UserScript locale.</p>
+      <a href="src/minimal-ig.user.js" class="secondary-btn-link" download>Download UserScript Engine</a>
+    </section>
+
+    <div id="settingsModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Filtri Anti-Scrolling</h2>
+          <button id="closeSettingsBtn" class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <label class="toggle-item">
+            <span>Blocca Tab Reels & Esplora</span>
+            <input type="checkbox" id="toggleReels" checked disabled>
+          </label>
+          <label class="toggle-item">
+            <span>Nascondi Post Suggeriti</span>
+            <input type="checkbox" id="toggleSuggested" checked>
+          </label>
+          <label class="toggle-item">
+            <span>Nascondi Conteggio Mi Piace</span>
+            <input type="checkbox" id="toggleLikes">
+          </label>
+          <label class="toggle-item">
+            <span>Nascondi Storie</span>
+            <input type="checkbox" id="toggleStories">
+          </label>
+          <div class="input-group">
+            <label for="customUsername">Tuo Username Instagram:</label>
+            <input type="text" id="customUsername" placeholder="es. mario_rossi">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="timeUpModal" class="modal hidden">
+      <div class="modal-content text-center">
+        <h2>Tempo Scaduto</h2>
+        <p class="modal-desc">Hai visto quello che ti serviva?</p>
+        <div class="modal-actions">
+          <button id="closeSessionBtn" class="primary-btn">Sì, Chiudi Sessione</button>
+          <button id="continueBtn" class="text-btn">Continua Comunque</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/app.js"></script>
+</body>
+</html>
